@@ -1,0 +1,20 @@
+:root {
+    --primary-color: #2B2E4A; /* Dark Blue */
+    --secondary-color: #E84545; /* Red */
+    --background-color: #87CEEBFF; /* Dark Purple */
+    --accent-color: #53354A; /* Light Purple */
+    --text-color: #F5E6CA; /* Off White */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.todo-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+}
