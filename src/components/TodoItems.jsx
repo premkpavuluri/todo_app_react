@@ -1,14 +1,13 @@
 import React from "react";
 import * as PropTypes from "prop-types";
+import TodoItem from "./TodoItem";
 
 const TodoItems = ({todoItems}) => {
-  return (<div className="todo-items">
-    <ul>
-      {todoItems.map(item => {
-        return <li key={item.id}>{item.text}</li>
-      })}
-    </ul>
-  </div>);
+  const items = todoItems.map(({id, text}) => {
+    return <TodoItem key={id} task={text}/>
+  });
+
+  return (<div className="todo-items">{items}</div>);
 }
 
 TodoItems.propTypes = {
