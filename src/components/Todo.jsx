@@ -4,13 +4,18 @@ import TodoItems from "./TodoItems";
 import AddTodoItem from "./AddTodoItem";
 import TodoTitle from "./TodoTitle";
 
+const STATUS = {
+  ACTIVE: "active",
+  COMPLETED: "completed"
+}
+
 const Todo = (props) => {
   const [todoItems, setTodoItems] = useState(
-      {nextItemId: 1, items: [{id: 0, text: "Learn React"}]})
+      {nextItemId: 1, items: [{id: 0, text: "Learn React", status: STATUS.COMPLETED}]})
 
   const addTodoItem = (text) => {
     const nextItemId = todoItems.nextItemId + 1;
-    const items = [...todoItems.items, {id: todoItems.nextItemId, text}];
+    const items = [...todoItems.items, {id: todoItems.nextItemId, text, status: STATUS.ACTIVE}];
     setTodoItems({nextItemId, items});
   }
 

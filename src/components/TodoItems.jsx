@@ -3,8 +3,8 @@ import * as PropTypes from "prop-types";
 import TodoItem from "./TodoItem";
 
 const TodoItems = ({todoItems}) => {
-  const items = todoItems.map(({id, text}) => {
-    return <TodoItem key={id} task={text}/>
+  const items = todoItems.map(({id, text, status}) => {
+    return <TodoItem key={id} task={text} status={status}/>
   });
 
   return (<div className="todo-items">{items}</div>);
