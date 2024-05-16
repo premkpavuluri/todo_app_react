@@ -19,10 +19,21 @@ const Todo = (props) => {
     setTodoItems({nextItemId, items});
   }
 
+  const toggleStatus = (id) => {
+    const items = todoItems.items.map(item => {
+      if (item.id === id) {
+        return {...item, status: item.status === STATUS.ACTIVE ? STATUS.COMPLETED : STATUS.ACTIVE};
+      }
+      return item;
+    });
+    const nextItemId = todoItems.nextItemId;
+    setTodoItems({nextItemId, items})
+  }
+
   return (<div className="todo-layout">
     <TodoTitle/>
     <AddTodoItem onClick={addTodoItem}/>
-    <TodoItems todoItems={todoItems.items}/>
+    <TodoItems todoItems={todoItems.items} toggleStatus={toggleStatus}/>
   </div>);
 }
 
