@@ -1,8 +1,5 @@
 import React, {useState} from "react";
 
-const Input = ({value, onChange}) => {
-  return <input type="text" value={value} onChange={(event) => onChange(event.target.value)}/>
-}
 
 const AddTodoItem = ({onClick}) => {
   const [text, setText] = useState("");
@@ -11,14 +8,20 @@ const AddTodoItem = ({onClick}) => {
     setText(value);
   }
 
-  const handleClick = () => {
-    onClick(text);
-    setText("");
+  const handleClick = (event) => {
+    if (event.charCode === 13 && text !== "") {
+      onClick(text);
+      setText("");
+    }
   }
 
   return (<div className="add-todo-item">
-    <Input value={text} onChange={handleChange}/>
-    <button onClick={handleClick}>Add</button>
+    <input
+        type="text"
+        value={text}
+        onChange={(event) => handleChange(event.target.value)}
+        onKeyPress={handleClick}
+    />
   </div>);
 }
 
