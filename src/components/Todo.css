@@ -18,3 +18,7 @@
     height: 100vh;
     background-color: var(--background-color);
 }
+
+.item {
+    display: flex;
+}

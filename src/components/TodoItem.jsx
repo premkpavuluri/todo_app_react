@@ -1,5 +1,11 @@
 import React, {useState} from "react";
 
+const Message = ({text}) => {
+  return (<div>
+    <span>{text}</span>
+  </div>)
+};
+
 const TodoItem = ({id, task, status, toggleStatus, onDelete}) => {
   const [isHover, setIsHover] = useState(false);
 
@@ -13,7 +19,7 @@ const TodoItem = ({id, task, status, toggleStatus, onDelete}) => {
 
   return (<div className="item" onClick={() => toggleStatus(id)} onMouseEnter={onMouse} onMouseLeave={offMouse}>
     <input type="checkbox" checked={status === "completed"}/>
-    <span>{task}</span>
+    <Message text={task}/>
     {isHover && <span onClick={() => onDelete(id)}>X</span>}
   </div>);
 }
