@@ -3,6 +3,7 @@ import './Todo.css';
 import TodoItems from "./TodoItems";
 import AddTodoItem from "./AddTodoItem";
 import TodoTitle from "./TodoTitle";
+import todoItem from "./TodoItem";
 
 const STATUS = {
   DUE: "due",
@@ -33,10 +34,13 @@ const Todo = (props) => {
     setTodoItems({nextItemId, items})
   }
 
+  const excludeItem = (itemId) => {
+    return todoItems.items.filter(({id}) => id !== itemId)
+  }
+
   const deleteItem = (targetId) => {
-    const itemIndex = todoItems.items.findIndex(({id})=>id === targetId)
-    const updatedItems = todoItems.items.splice(itemIndex,1)
-    setTodoItems({items: updatedItems})
+    const updatedItems = excludeItem(targetId)
+    setTodoItems({...todoItems, items: [...updatedItems]});
   }
 
   return (<div className="todo-layout">
