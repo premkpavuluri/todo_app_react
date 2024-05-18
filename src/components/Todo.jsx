@@ -44,8 +44,9 @@ const Todo = (props) => {
 
   const updateItem = (id, text) => {
     const updatedItems = todoItems.items.map(task => {
-      return task.id === id ? {...task, name: text} : task
+      return task.id === id ? {...task, text} : task
     });
+
     setTodoItems({...todoItems, items: updatedItems});
   }
 
