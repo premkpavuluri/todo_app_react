@@ -1,18 +1,20 @@
 import React from "react";
 import * as PropTypes from "prop-types";
 import TodoItem from "./TodoItem";
+import withDelete from "./hooks/withDelete";
 
 const TodoItems = ({todoItems, toggleStatus, onDelete, onEdit}) => {
   const items = todoItems.map(({id, text, status}) => {
-    return <TodoItem
+    const TodoWithDelete = withDelete(TodoItem, onDelete)
+
+    return (<TodoWithDelete
         key={id}
         id={id}
         task={text}
         status={status}
         toggleStatus={toggleStatus}
-        onDelete={onDelete}
         onEdit={onEdit}
-    />
+    />);
   });
 
   return (<div className="todo-items">{items}</div>);

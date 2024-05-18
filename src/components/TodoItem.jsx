@@ -1,17 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import EditableMessage from "./EditableMessage";
 
-const TodoItem = ({id, task, status, toggleStatus, onDelete, onEdit}) => {
-  const [isHover, setIsHover] = useState(false);
-
-  const onMouse = () => {
-    setIsHover(true);
-  }
-
-  const offMouse = () => {
-    setIsHover(false);
-  }
-
+const TodoItem = ({id, task, status, toggleStatus, onEdit}) => {
   const isChecked = () => {
     return status === "completed";
   }
@@ -20,10 +10,9 @@ const TodoItem = ({id, task, status, toggleStatus, onDelete, onEdit}) => {
     onEdit(id, text)
   }
 
-  return (<div className="item" onMouseEnter={onMouse} onMouseLeave={offMouse}>
+  return (<div className="item">
     <input type="checkbox" onChange={() => toggleStatus(id)} checked={isChecked()}/>
     <EditableMessage message={task} updateMessage={updateItem}/>
-    {isHover && <span onClick={() => onDelete(id)}>X</span>}
   </div>);
 }
 
