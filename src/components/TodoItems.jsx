@@ -11,10 +11,7 @@ const TodoItems = ({todoItems, toggleStatus}) => {
 }
 
 TodoItems.propTypes = {
-  todoItems: PropTypes.shape({
-    nextItemId: PropTypes.number,
-    items: PropTypes.arrayOf(PropTypes.any)
-  }),
+  todoItems: PropTypes.arrayOf(PropTypes.any),
   toggleStatus: PropTypes.func
 };
 

@@ -5,24 +5,27 @@ import AddTodoItem from "./AddTodoItem";
 import TodoTitle from "./TodoTitle";
 
 const STATUS = {
-  ACTIVE: "active",
+  DUE: "due",
   COMPLETED: "completed"
 }
+const initialTodoItems = [
+  {id: 0, text: "Learn React", status: STATUS.DUE},
+  {id: 1, text: "Learn JavaScript", status: STATUS.COMPLETED}
+];
 
 const Todo = (props) => {
-  const [todoItems, setTodoItems] = useState(
-      {nextItemId: 1, items: [{id: 0, text: "Learn React", status: STATUS.COMPLETED}]})
+  const [todoItems, setTodoItems] = useState({nextItemId: 1, items: initialTodoItems})
 
   const addTodoItem = (text) => {
     const nextItemId = todoItems.nextItemId + 1;
-    const items = [...todoItems.items, {id: todoItems.nextItemId, text, status: STATUS.ACTIVE}];
+    const items = [...todoItems.items, {id: todoItems.nextItemId, text, status: STATUS.DUE}];
     setTodoItems({nextItemId, items});
   }
 
   const toggleStatus = (id) => {
     const items = todoItems.items.map(item => {
       if (item.id === id) {
-        return {...item, status: item.status === STATUS.ACTIVE ? STATUS.COMPLETED : STATUS.ACTIVE};
+        return {...item, status: item.status === STATUS.DUE ? STATUS.COMPLETED : STATUS.DUE};
       }
       return item;
     });
