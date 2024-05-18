@@ -33,10 +33,16 @@ const Todo = (props) => {
     setTodoItems({nextItemId, items})
   }
 
+  const deleteItem = (targetId) => {
+    const itemIndex = todoItems.items.findIndex(({id})=>id === targetId)
+    const updatedItems = todoItems.items.splice(itemIndex,1)
+    setTodoItems({items: updatedItems})
+  }
+
   return (<div className="todo-layout">
     <TodoTitle/>
     <AddTodoItem onClick={addTodoItem}/>
-    <TodoItems todoItems={todoItems.items} toggleStatus={toggleStatus}/>
+    <TodoItems todoItems={todoItems.items} toggleStatus={toggleStatus} onDelete={deleteItem}/>
   </div>);
 }
 
