@@ -3,7 +3,6 @@ import './Todo.css';
 import TodoItems from "./TodoItems";
 import AddTodoItem from "./AddTodoItem";
 import TodoTitle from "./TodoTitle";
-import todoItem from "./TodoItem";
 
 const STATUS = {
   DUE: "due",
@@ -15,7 +14,7 @@ const initialTodoItems = [
 ];
 
 const Todo = (props) => {
-  const [todoItems, setTodoItems] = useState({nextItemId: 1, items: initialTodoItems})
+  const [todoItems, setTodoItems] = useState({nextItemId: 2, items: initialTodoItems})
 
   const addTodoItem = (text) => {
     const nextItemId = todoItems.nextItemId + 1;
@@ -43,10 +42,22 @@ const Todo = (props) => {
     setTodoItems({...todoItems, items: [...updatedItems]});
   }
 
+  const updateItem = (id, text) => {
+    const updatedItems = todoItems.items.map(task => {
+      return task.id === id ? {...task, name: text} : task
+    });
+    setTodoItems({...todoItems, items: updatedItems});
+  }
+
   return (<div className="todo-layout">
     <TodoTitle/>
     <AddTodoItem onClick={addTodoItem}/>
-    <TodoItems todoItems={todoItems.items} toggleStatus={toggleStatus} onDelete={deleteItem}/>
+    <TodoItems
+        todoItems={todoItems.items}
+        toggleStatus={toggleStatus}
+        onDelete={deleteItem}
+        onEdit={updateItem}
+    />
   </div>);
 }
 

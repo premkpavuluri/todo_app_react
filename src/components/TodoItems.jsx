@@ -2,7 +2,7 @@ import React from "react";
 import * as PropTypes from "prop-types";
 import TodoItem from "./TodoItem";
 
-const TodoItems = ({todoItems, toggleStatus, onDelete}) => {
+const TodoItems = ({todoItems, toggleStatus, onDelete, onEdit}) => {
   const items = todoItems.map(({id, text, status}) => {
     return <TodoItem
         key={id}
@@ -11,6 +11,7 @@ const TodoItems = ({todoItems, toggleStatus, onDelete}) => {
         status={status}
         toggleStatus={toggleStatus}
         onDelete={onDelete}
+        onEdit={onEdit}
     />
   });
 
@@ -21,6 +22,7 @@ TodoItems.propTypes = {
   todoItems: PropTypes.arrayOf(PropTypes.any),
   toggleStatus: PropTypes.func,
   onDelete: PropTypes.func,
+  onEdit: PropTypes.func,
 };
 
 export default TodoItems;
