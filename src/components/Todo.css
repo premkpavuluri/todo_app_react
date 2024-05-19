@@ -95,3 +95,19 @@
     -webkit-appearance: none; /* Removes the default browser appearance for Safari */
     -moz-appearance: none; /* Removes the default browser appearance for Firefox */
 }
+
+.indicator {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--text-color);
+    margin-right: 0.1rem;
+    border-radius: 40%;
+}
+
+.indicator.completed {
+    background-color: lightgreen;
+}
+
+.indicator.due {
+    background-color: orangered;
+}

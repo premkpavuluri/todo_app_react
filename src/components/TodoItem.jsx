@@ -1,17 +1,21 @@
 import React from "react";
 import EditableMessage from "./EditableMessage";
 
-const TodoItem = ({id, task, status, toggleStatus, onEdit}) => {
-  const isChecked = () => {
-    return status === "completed";
-  }
+const Indicator = ({status, onChange}) => {
+  return (<div className={`indicator ${status}`} onClick={() => onChange()}></div>);
+}
 
+const TodoItem = ({id, task, status, toggleStatus, onEdit}) => {
   const updateItem = (text) => {
     onEdit(id, text)
   }
 
+  const onStatusChange = () => {
+    toggleStatus(id);
+  }
+
   return (<div className="item">
-    <input type="checkbox" onChange={() => toggleStatus(id)} checked={isChecked()}/>
+    <Indicator status={status} onChange={onStatusChange}/>
     <EditableMessage message={task} updateMessage={updateItem}/>
   </div>);
 }
