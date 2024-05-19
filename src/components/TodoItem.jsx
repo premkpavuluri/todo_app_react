@@ -1,9 +1,6 @@
 import React from "react";
 import EditableMessage from "./EditableMessage";
-
-const Indicator = ({status, onChange}) => {
-  return (<div className={`indicator ${status}`} onClick={() => onChange()}></div>);
-}
+import Indicator from "./Indicator";
 
 const TodoItem = ({id, task, status, toggleStatus, onEdit}) => {
   const updateItem = (text) => {
