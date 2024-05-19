@@ -14,6 +14,7 @@ const withDelete = (Component, onDelete) => {
 
     return (
         <DeleteContainer
+            className="delete-container"
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}>
           <Component {...props}/>

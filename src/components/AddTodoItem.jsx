@@ -19,6 +19,7 @@ const AddTodoItem = ({onClick}) => {
     <input
         type="text"
         value={text}
+        placeholder="Type here to create a new task"
         onChange={(event) => handleChange(event.target.value)}
         onKeyPress={handleClick}
     />

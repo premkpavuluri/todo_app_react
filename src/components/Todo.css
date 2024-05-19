@@ -1,9 +1,8 @@
 :root {
-    --primary-color: #2B2E4A; /* Dark Blue */
-    --secondary-color: #E84545; /* Red */
-    --background-color: #87CEEBFF; /* Dark Purple */
-    --accent-color: #53354A; /* Light Purple */
-    --text-color: #F5E6CA; /* Off White */
+    --text-color: white;
+    --secondary-text-color: black;
+    --primary-background-color: lightcoral;
+    --background-color: whitesmoke;
 }
 
 * {
@@ -19,6 +18,60 @@
     background-color: var(--background-color);
 }
 
+.todo-title {
+    background-color: var(--primary-background-color);
+    color: var(--text-color);
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    margin: 0 auto;
+}
+
+.add-todo-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.add-todo-item > input {
+    width: 600px;
+    height: 2rem;
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    text-align: center;
+}
+
+.todo-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.delete-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    height: 2rem;
+    background-color: var(--primary-background-color);
+    color: var(--text-color);
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.dlt-btn {
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.3rem;
+}
+
 .item {
     display: flex;
+    align-items: center;
+    width: 600px;
+    height: 2rem;
 }
