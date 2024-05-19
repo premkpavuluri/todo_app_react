@@ -75,3 +75,23 @@
     width: 600px;
     height: 2rem;
 }
+
+.todo-message {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    width: 100%;
+}
+
+.edit-input {
+    background-color: var(--primary-background-color);
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 0.3rem;
+    /*text-align: center;*/
+    border: none;
+    outline: none; /* Removes the default browser outline */
+    box-shadow: none; /* Removes the default browser shadow */
+    appearance: none; /* Removes the default browser appearance */
+    -webkit-appearance: none; /* Removes the default browser appearance for Safari */
+    -moz-appearance: none; /* Removes the default browser appearance for Firefox */
+}

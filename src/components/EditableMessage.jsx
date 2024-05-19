@@ -26,6 +26,7 @@ const EditableMessage = ({message, updateMessage}) => {
 
   return (<div className="todo-message" onClick={startEdit}>
     {isEditing ? <input
+        className={"edit-input"}
         type="text"
         value={text}
         onChange={(event) => handleChange(event.target.value)}
