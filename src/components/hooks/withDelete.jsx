@@ -8,6 +8,7 @@ const DeleteContainer = styled.div`
     justify-content: space-between;
 `;
 
+// Not in use :(
 const withDelete = (Component, onDelete) => {
   return (props) => {
     const [isHover, setIsHover] = useState(false);
