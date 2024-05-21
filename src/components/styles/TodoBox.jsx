@@ -13,4 +13,11 @@ const TodoBox = styled.div`
     border-radius: 0.3rem;
 `;
 
-export default TodoBox;
+const ItemContainer = styled.div`
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: 2rem;
+`;
+
+export {TodoBox, ItemContainer};
