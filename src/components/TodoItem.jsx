@@ -4,16 +4,21 @@ import Indicator from "./Indicator";
 import DeleteBtn from "./DeleteBtn";
 import useHover from "./hooks/useHover";
 import {ItemContainer, TodoBox} from "./styles/TodoBox";
+import OPERATIONS from "./constants/operations";
 
-const TodoItem = ({id, task, status, toggleStatus, onEdit, onDelete}) => {
+const TodoItem = ({id, task, status, dispatch}) => {
   const [hoverRef, isHovered] = useHover();
 
   const updateItem = (text) => {
-    onEdit(id, text)
+    dispatch({type: OPERATIONS.EDIT, id, text});
+  }
+
+  const deleteItem = () => {
+    dispatch({type: OPERATIONS.DELETE, id})
   }
 
   const onStatusChange = () => {
-    toggleStatus(id);
+    dispatch({type: OPERATIONS.TOGGLE_STATUS, id});
   }
 
   return (<TodoBox ref={hoverRef}>
@@ -21,7 +26,7 @@ const TodoItem = ({id, task, status, toggleStatus, onEdit, onDelete}) => {
       <Indicator status={status} onChange={onStatusChange}/>
       <EditableMessage message={task} updateMessage={updateItem}/>
     </ItemContainer>
-    {isHovered && <DeleteBtn onClick={() => onDelete(id)}/>}
+    {isHovered && <DeleteBtn onClick={deleteItem}/>}
   </TodoBox>);
 }
 

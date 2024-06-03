@@ -1,7 +1,7 @@
 import React, {useState} from "react";
+import OPERATIONS from "./constants/operations";
 
-
-const AddTodoItem = ({onClick}) => {
+const AddTodoItem = ({dispatch}) => {
   const [text, setText] = useState("");
 
   const handleChange = (value) => {
@@ -10,7 +10,7 @@ const AddTodoItem = ({onClick}) => {
 
   const handleClick = (event) => {
     if (event.charCode === 13 && text !== "") {
-      onClick(text);
+      dispatch({type: OPERATIONS.ADD, text});
       setText("");
     }
   }
