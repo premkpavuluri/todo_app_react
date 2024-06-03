@@ -5,6 +5,11 @@ const STATUS = {
   COMPLETED: "completed"
 }
 
+const changeStatus = {
+  [STATUS.DUE]: STATUS.COMPLETED,
+  [STATUS.COMPLETED]: STATUS.DUE
+}
+
 const initItems = [
   {id: 0, text: "Learn React", status: STATUS.DUE},
   {id: 1, text: "Learn JavaScript", status: STATUS.COMPLETED}
@@ -30,7 +35,7 @@ const editItem = (items, id, text) => {
 const toggleStatus = (items, id) => {
   return items.map(item => {
     if (item.id === id) {
-      return {...item, status: item.status === STATUS.DUE ? STATUS.COMPLETED : STATUS.DUE};
+      return {...item, status: changeStatus[item.status]};
     }
     return item;
   });
