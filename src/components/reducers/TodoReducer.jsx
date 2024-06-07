@@ -2,11 +2,13 @@ import OPERATIONS from "../constants/operations";
 
 const STATUS = {
   DUE: "due",
+  STARTED: "started",
   COMPLETED: "completed"
 }
 
 const changeStatus = {
-  [STATUS.DUE]: STATUS.COMPLETED,
+  [STATUS.DUE]: STATUS.STARTED,
+  [STATUS.STARTED]: STATUS.COMPLETED,
   [STATUS.COMPLETED]: STATUS.DUE
 }
 

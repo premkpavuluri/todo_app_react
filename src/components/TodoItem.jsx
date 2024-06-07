@@ -24,7 +24,7 @@ const TodoItem = ({id, task, status, dispatch}) => {
   return (<TodoBox ref={hoverRef}>
     <ItemContainer>
       <Indicator status={status} onChange={onStatusChange}/>
-      <EditableMessage message={task} updateMessage={updateItem}/>
+      <EditableMessage message={task} updateMessage={updateItem} status={status}/>
     </ItemContainer>
     {isHovered && <DeleteBtn onClick={deleteItem}/>}
   </TodoBox>);

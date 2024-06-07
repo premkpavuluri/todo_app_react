@@ -20,4 +20,8 @@ const ItemContainer = styled.div`
     height: 2rem;
 `;
 
-export {TodoBox, ItemContainer};
+const DecoratedTodoBox = styled.div`
+    text-decoration: ${({status}) => status === "completed" ? "line-through" : "none"};
+`;
+
+export {TodoBox, ItemContainer, DecoratedTodoBox};

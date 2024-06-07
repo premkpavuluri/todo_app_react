@@ -99,10 +99,14 @@
     border-radius: 40%;
 }
 
-.indicator.completed {
-    background-color: lightgreen;
+.indicator.due {
+    background-color: aqua;
 }
 
-.indicator.due {
-    background-color: orangered;
+.indicator.started {
+    background-color: greenyellow;
+}
+
+.indicator.completed {
+    background-color: forestgreen;
 }
