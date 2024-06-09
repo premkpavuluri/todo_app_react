@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {DecoratedTodoBox} from "./styles/TodoBox";
+import {DecoratedTodoBox, EditableInput} from "./styles/TodoBox";
 
 const EditableMessage = ({message, updateMessage, status}) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -25,9 +25,8 @@ const EditableMessage = ({message, updateMessage, status}) => {
     updateMessage(value)
   }
 
-  return (<DecoratedTodoBox className={"todo-message"} status={status} onClick={startEdit}>
-    {isEditing ? <input
-        className={"edit-input"}
+  return (<DecoratedTodoBox status={status} onClick={startEdit}>
+    {isEditing ? <EditableInput
         type="text"
         value={text.toString()}
         onChange={(event) => handleChange(event.target.value)}

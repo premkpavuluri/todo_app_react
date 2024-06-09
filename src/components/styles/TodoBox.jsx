@@ -22,6 +22,10 @@ const ItemContainer = styled.div`
 
 const DecoratedTodoBox = styled.div`
     text-decoration: ${({status}) => status === "completed" ? "line-through" : "none"};
+
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    width: 100%;
 `;
 
 const DeleteButton = styled.span`
@@ -31,4 +35,21 @@ const DeleteButton = styled.span`
     padding: 0.3rem;
 `;
 
-export {TodoBox, ItemContainer, DecoratedTodoBox, DeleteButton};
+const EditableInput = styled.input`
+    background-color: var(--primary-background-color);
+    font-size: 1.5rem;
+    width: 100%;
+    padding: 0.3rem;
+    border: none;
+    outline: none; /* Removes the default browser outline */
+    box-shadow: none; /* Removes the default browser shadow */
+    appearance: none; /* Removes the default browser appearance */
+    -webkit-appearance: none; /* Removes the default browser appearance for Safari */
+    -moz-appearance: none; /* Removes the default browser appearance for Firefox */
+`;
+
+export {TodoBox,
+  ItemContainer,
+  DecoratedTodoBox,
+  DeleteButton,
+  EditableInput};
