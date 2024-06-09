@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import OPERATIONS from "./constants/operations";
+import {StyledAddItem} from "./styles/TodoBox";
 
 const AddTodoItem = ({dispatch}) => {
   const [text, setText] = useState("");
@@ -15,7 +16,7 @@ const AddTodoItem = ({dispatch}) => {
     }
   }
 
-  return (<div className="add-todo-item">
+  return (<StyledAddItem>
     <input
         type="text"
         value={text}
@@ -23,7 +24,7 @@ const AddTodoItem = ({dispatch}) => {
         onChange={(event) => handleChange(event.target.value)}
         onKeyPress={handleClick}
     />
-  </div>);
+  </StyledAddItem>);
 }
 
 export default AddTodoItem;

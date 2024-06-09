@@ -2,20 +2,20 @@ import React, {useReducer} from 'react';
 import './Todo.css';
 import TodoItems from "./TodoItems";
 import AddTodoItem from "./AddTodoItem";
-import TodoTitle from "./TodoTitle";
 import {initialTodo, todoReducer} from "./reducers/TodoReducer";
+import {TodoLayout, TodoTitle} from "./styles/TodoBox";
 
 const Todo = () => {
   const [state, dispatch] = useReducer(todoReducer, initialTodo, undefined);
 
-  return (<div className="todo-layout">
-    <TodoTitle/>
+  return (<TodoLayout>
+    <TodoTitle>TODO</TodoTitle>
     <AddTodoItem dispatch={dispatch}/>
     <TodoItems
         todoItems={state.items}
         dispatch={dispatch}
     />
-  </div>);
+  </TodoLayout>);
 }
 
 export default Todo;
