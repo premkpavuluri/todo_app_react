@@ -1,7 +1,7 @@
 import React from "react";
 import * as PropTypes from "prop-types";
 import TodoItem from "./TodoItem";
-import {FlexContainer} from "./styles/TodoBox";
+import {FlexContainer} from "./styles/StyledComponents";
 
 const TodoItems = ({todoItems, dispatch}) => {
   const items = todoItems.map(({id, text, status}) => {

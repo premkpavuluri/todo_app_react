@@ -9,23 +9,3 @@
     margin: 0;
     padding: 0;
 }
-
-.indicator {
-    width: 20px;
-    height: 20px;
-    border: 1px solid var(--text-color);
-    margin-right: 0.1rem;
-    border-radius: 40%;
-}
-
-.indicator.due {
-    background-color: aqua;
-}
-
-.indicator.started {
-    background-color: greenyellow;
-}
-
-.indicator.completed {
-    background-color: forestgreen;
-}

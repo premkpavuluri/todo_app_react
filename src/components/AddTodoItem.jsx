@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import OPERATIONS from "./constants/operations";
-import {StyledAddItem} from "./styles/TodoBox";
+import {StyledAddItem} from "./styles/StyledComponents";
 
 const AddTodoItem = ({dispatch}) => {
   const [text, setText] = useState("");

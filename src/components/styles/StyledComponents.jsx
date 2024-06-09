@@ -88,6 +88,25 @@ const StyledAddItem = styled.div`
     }
 `;
 
+const StatusIcon = styled.div`
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--text-color);
+    margin-right: 0.1rem;
+    border-radius: 40%;
+
+    background-color: ${({status}) => {
+        switch (status) {
+            case 'completed':
+                return 'forestgreen';
+            case 'started':
+                return 'greenyellow';
+            default:
+                return 'aqua';
+        }
+    }};
+`;
+
 export {
   TodoBox,
   ItemContainer,
@@ -97,5 +116,6 @@ export {
   FlexContainer,
   TodoLayout,
   TodoTitle,
-  StyledAddItem
+  StyledAddItem,
+  StatusIcon
 };

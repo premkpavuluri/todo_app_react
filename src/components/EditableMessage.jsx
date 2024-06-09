@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {DecoratedTodoBox, EditableInput} from "./styles/TodoBox";
+import {DecoratedTodoBox, EditableInput} from "./styles/StyledComponents";
 
 const EditableMessage = ({message, updateMessage, status}) => {
   const [isEditing, setIsEditing] = useState(false);
