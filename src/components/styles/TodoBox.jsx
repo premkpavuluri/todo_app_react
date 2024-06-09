@@ -24,4 +24,11 @@ const DecoratedTodoBox = styled.div`
     text-decoration: ${({status}) => status === "completed" ? "line-through" : "none"};
 `;
 
-export {TodoBox, ItemContainer, DecoratedTodoBox};
+const DeleteButton = styled.span`
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.3rem;
+`;
+
+export {TodoBox, ItemContainer, DecoratedTodoBox, DeleteButton};

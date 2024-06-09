@@ -1,7 +1,8 @@
 import React from "react";
+import {DeleteButton} from "./styles/TodoBox";
 
 const DeleteBtn = ({onClick}) => {
-  return (<span className="dlt-btn" onClick={() => onClick()}>X</span>)
+  return (<DeleteButton onClick={onClick}>X</DeleteButton>)
 }
 
 export default DeleteBtn;
