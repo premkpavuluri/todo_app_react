@@ -42,13 +42,6 @@
     text-align: center;
 }
 
-.todo-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
 .todo-container {
     background-color: var(--primary-background-color);
     color: var(--text-color);

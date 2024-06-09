@@ -48,8 +48,16 @@ const EditableInput = styled.input`
     -moz-appearance: none; /* Removes the default browser appearance for Firefox */
 `;
 
+const FlexContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+`;
+
 export {TodoBox,
   ItemContainer,
   DecoratedTodoBox,
   DeleteButton,
-  EditableInput};
+  EditableInput,
+  FlexContainer};
